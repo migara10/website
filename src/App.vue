@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav-bar />
+  <router-view :key="$route.fullPath"></router-view>
+  <!-- <footer-bar class="d-none"/> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import FooterBar from "./components/FooterPage.vue";
+import NavBar from "./components/NavBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    /* FooterBar, */
+    NavBar,
+  },
+  setup() {},
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+$base-font: "Philosopher";
+$title-font: "Yeseva One";
 </style>
