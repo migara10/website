@@ -1,6 +1,19 @@
 <template>
   <div class="main">
     <div class="_body">
+      <div class="pera">
+        <h2>{{ getUserDetails(routeCategory) }} News</h2>
+      </div>
+      <div class="last_news">
+        <img
+          class="_image_size"
+          :src="`${baseUrl}/${lastUpdateNews.imgUri}`"
+          alt=""
+        />
+      </div>
+      <div class="last_news">
+          <p style="width: 60%; color:black">{{ lastUpdateNews.content }}</p>
+      </div>
       <div class="news_block">
         <div class="container1">
           <div
@@ -28,7 +41,7 @@
                     data-bs-target="#newsModal"
                     @click="openSingleNewsPopup(ourService)"
                   >
-                    View More123
+                    View More
                   </p>
                 </div>
                 Last updating in- {{ timeDiff(ourService.updatedAt) }}
@@ -50,14 +63,21 @@ import moment from "moment";
 import newsModel from "./ViewSingleNews.vue";
 
 export default {
-  components: {newsModel},
+  components: { newsModel },
   setup() {
     const route = useRoute();
-    // const baseUrl = "https://newsbackend1.herokuapp.com";
-    const baseUrl = "http://localhost:5000";
+    const baseUrl = axios.defaults.baseURL;
     const allNews = ref([]);
     const routeCategory = ref("");
-    const selectedNews = ref(); 
+    const selectedNews = ref();
+    const lastUpdateNews = ref({
+      author: "",
+      category: "",
+      heading: "",
+      content: "",
+      createdAt: "",
+      updatedAt: "",
+    });
 
     // get news
     const getNewsByTitle = () => {
@@ -66,6 +86,7 @@ export default {
         .get(`news/${routeCategory.value}`)
         .then((res) => {
           allNews.value = res.data.news;
+          lastUpdateNews.value = res.data.news[0];
         })
         .catch();
     };
@@ -87,6 +108,10 @@ export default {
     const openSingleNewsPopup = (news) => {
       selectedNews.value = news;
     };
+    // get Main category
+    const getUserDetails = (text) => {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    };
     onMounted(() => {
       getNewsByTitle();
     });
@@ -98,6 +123,8 @@ export default {
       timeDiff,
       openSingleNewsPopup,
       selectedNews,
+      getUserDetails,
+      lastUpdateNews,
     };
   },
 };
@@ -106,11 +133,24 @@ export default {
 <style scoped lang="scss">
 .main {
   background: rgba(125, 125, 125, 0.455);
-  height: 100vh;
+  height: 100%;
   top: 0px;
   width: 100%;
   z-index: 0;
   ._body {
+    .last_news {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      ._image_size {
+        width: 50%;
+        height: 350px;
+      }
+    }
+    .pera {
+      color: black;
+      text-align: center;
+    }
     padding-top: 150px;
     color: white;
     ._slider {
@@ -166,11 +206,11 @@ export default {
             }
           }
           ._bottom {
+            display: flex;
             justify-content: center;
-            align-items: end;
-            /* p{
-              text-align: center;
-            } */
+            p {
+              color: red;
+            }
           }
         }
       }

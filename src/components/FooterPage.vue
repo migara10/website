@@ -2,38 +2,6 @@
 <footer class="bg-dark text-center text-white">
   <section id="footer">
 		<div class="container">
-			<div class="row text-center text-xs-center text-sm-left text-md-left">
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href=""><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>Videos</a></li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href=""><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>Videos</a></li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h5>Quick links</h5>
-					<ul class="list-unstyled quick-links">
-						<li><a href=""><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href=""><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
-					</ul>
-				</div>
-			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
 					<ul class="list-unstyled list-inline social text-center">
@@ -49,7 +17,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
 					<p><u><a href="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero aperiam odit eos </a></u> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure in quaerat neque odio. Distinctio, aliquid reiciendis! Soluta veritatis id dolorum necessitatibus cupiditate fugit? Laudantium sint deserunt, consectetur nostrum tenetur voluptates.</p>
-					<p class="h6">© All right Reversed.<a class="text-green ml-2" href="" target="_blank">RoseGarden</a></p>
+					<p class="h6">© All right Reversed. <a class="text-green ml-2" href="" target="_blank">Ada Derana</a></p>
 				</div>
 				<hr>
 			</div>	
@@ -80,7 +48,7 @@ section .section-title {
     text-transform: uppercase;
 }
 #footer {
-    background: #373c3b !important;
+    background: #0000001f !important;
 }
 #footer h5{
 	padding-left: 10px;

@@ -1,18 +1,21 @@
 <template>
   <nav-bar />
   <router-view :key="$route.fullPath"></router-view>
+  <footer-page />
   <!-- <footer-bar class="d-none"/> -->
 </template>
 
 <script>
 // import FooterBar from "./components/FooterPage.vue";
 import NavBar from "./components/NavBar.vue";
+import FooterPage from "./components/FooterPage.vue";
 
 export default {
   name: "App",
   components: {
     /* FooterBar, */
     NavBar,
+    FooterPage,
   },
   setup() {},
 };

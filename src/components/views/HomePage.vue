@@ -1,33 +1,6 @@
 <template>
   <div class="main">
     <div class="_body">
-      <!-- <agile :initialSlide="0" autoplay :infinite="true" :autoplay-speed="1000" class="_slider">
-        <div class="slide" v-for="opt in newsHeadlings" :key="opt" :value="opt.value">
-            <h3>{{opt.imgUri}}</h3>
-            <img :src="`${baseUrl}/${opt.imgUri}`" alt="" class="">
-        </div>
-    </agile> -->
-      <!-- <carousel wrapAround :autoplay="2000">
-          <slide v-for="head in newsHeadlings" :key="head._cId">
-            <div
-              class="_slider"
-              data-bs-toggle="modal"
-              data-bs-target="#newsModal"
-              @click="openSingleNewsPopup(head)"
-            >
-              <img class="_image" :src="`${baseUrl}/${head.imgUri}`" alt="" />
-              <p>
-                {{ head.heading }}
-              </p>
-            </div>
-          </slide>
-
-          <template #addons>
-            <navigation />
-            <pagination />
-          </template>
-        </carousel> -->
-      <!-- :key="head._cId" :title="slide.title" :content="slide.content" -->
       <div class="_carasoul">
         <div class="slider_block">
           <vueper-slides
@@ -43,12 +16,18 @@
               :title="head.heading"
               :content="head.content"
               transition-speed="250"
+              data-bs-toggle="modal"
+              data-bs-target="#newsModal"
+              @click="openSingleNewsPopup(head)"
             >
             </vueper-slide>
           </vueper-slides>
         </div>
       </div>
       <div class="news_block">
+        <div class="pera">
+          <h2>Last Updated News</h2>
+        </div>
         <div class="container1">
           <div
             class="items"
@@ -173,8 +152,12 @@ export default {
   }
 }
 .news_block {
+  .pera{
+    text-align: center;
+    margin-top: 48px;
+  }
   .container1 {
-    margin: 48px 12px 0 12px;
+    margin: 24px 12px 0 12px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -248,9 +231,9 @@ export default {
   .slider_block {
     width: 70%;
   }
-  .vueperslide{
-    color:rgb(0, 0, 0);
-    background-color:rgb(205, 170, 170) !important;
+  .vueperslide {
+    color: rgb(0, 0, 0);
+    background-color: rgb(205, 170, 170) !important;
   }
 }
 .vueperslide__image {
